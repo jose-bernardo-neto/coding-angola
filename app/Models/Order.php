@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
     protected $fillabe = [
         'user_id',
         'product_id',
@@ -16,12 +17,13 @@ class Order extends Model
         'payment_type',
     ];
 
-
-    protected function user(){
+    protected function user()
+    {
         $this->belongsTo(User::class);
     }
 
-    protected function products(){
+    protected function products()
+    {
         $this->hasMany(Product::class);
     }
 }
